@@ -9,6 +9,14 @@ export default defineConfig({
   build: {
     outDir: "dist",
     assetsDir: "assets",
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'three': ['three', '@react-three/fiber', '@react-three/drei'],
+          'framer': ['framer-motion'],
+        },
+      },
+    },
   },
 });
 

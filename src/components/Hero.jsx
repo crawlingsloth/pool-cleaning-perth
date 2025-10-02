@@ -1,7 +1,8 @@
+import { lazy, Suspense } from 'react'
 import { motion } from 'framer-motion'
-import { Canvas } from '@react-three/fiber'
-import { Suspense } from 'react'
-import WaterRipple from './WaterRipple'
+
+const Canvas = lazy(() => import('@react-three/fiber').then(module => ({ default: module.Canvas })))
+const WaterRipple = lazy(() => import('./WaterRipple'))
 
 const Hero = () => {
   const handleNavClick = (e, href) => {

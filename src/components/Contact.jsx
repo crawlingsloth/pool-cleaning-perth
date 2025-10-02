@@ -296,7 +296,9 @@ const Contact = () => {
               
               {/* Service Selection */}
               <div className="relative">
+                <label htmlFor="service" className="sr-only">Service Type</label>
                 <motion.select
+                  id="service"
                   name="service"
                   value={formData.service}
                   onChange={handleInputChange}
@@ -304,6 +306,7 @@ const Contact = () => {
                     errors.service ? 'border-red-400' : 'border-white/30'
                   } rounded-lg text-white focus:outline-none focus:border-aqua-300 transition-all duration-300 appearance-none`}
                   whileFocus={{ scale: 1.02 }}
+                  aria-label="Select a service"
                 >
                   <option value="" className="text-gray-800">Select a Service</option>
                   {services.map((service) => (

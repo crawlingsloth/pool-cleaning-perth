@@ -1,12 +1,15 @@
+import { lazy, Suspense } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Navigation from './components/Navigation'
 import Hero from './components/Hero'
-import WhyMaintain from './components/WhyMaintain'
-import Services from './components/Services'
-import PoolLights from './components/PoolLights'
-import GreenPool from './components/GreenPool'
-import Contact from './components/Contact'
 import Footer from './components/Footer'
+
+// Lazy load heavy components
+const WhyMaintain = lazy(() => import('./components/WhyMaintain'))
+const Services = lazy(() => import('./components/Services'))
+const PoolLights = lazy(() => import('./components/PoolLights'))
+const GreenPool = lazy(() => import('./components/GreenPool'))
+const Contact = lazy(() => import('./components/Contact'))
 
 function App() {
   return (
@@ -19,11 +22,13 @@ function App() {
           transition={{ duration: 0.8 }}
         >
           <Hero />
-          <WhyMaintain />
-          <Services />
-          <PoolLights />
-          <GreenPool />
-          <Contact />
+          <Suspense fallback={<div className="h-screen" />}>
+            <WhyMaintain />
+            <Services />
+            <PoolLights />
+            <GreenPool />
+            <Contact />
+          </Suspense>
           <Footer />
         </motion.div>
       </AnimatePresence>

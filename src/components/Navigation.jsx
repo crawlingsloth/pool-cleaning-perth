@@ -78,6 +78,8 @@ const Navigation = () => {
             }`}
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             whileTap={{ scale: 0.95 }}
+            aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={mobileMenuOpen}
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               {mobileMenuOpen ? (
