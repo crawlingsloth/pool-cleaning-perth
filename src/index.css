@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply text-gray-900 antialiased;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/20 backdrop-blur-md border border-white/30 rounded-xl shadow-xl;
+  }
+  
+  .btn-primary {
+    @apply bg-gradient-to-r from-pool-500 to-aqua-500 text-white px-6 py-3 rounded-lg font-semibold shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl;
+  }
+  
+  .btn-secondary {
+    @apply bg-white/20 backdrop-blur-md border border-white/30 text-white px-6 py-3 rounded-lg font-semibold transform transition-all duration-300 hover:bg-white/30 hover:scale-105;
+  }
+  
+  .section-padding {
+    @apply px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-pool-600 to-aqua-600 bg-clip-text text-transparent;
+  }
+  
+  .bg-pool-gradient {
+    background: linear-gradient(135deg, #0ea5e9 0%, #14b8a6 100%);
+  }
+  
+  .bg-water-texture {
+    background-image: 
+      radial-gradient(circle at 25% 25%, rgba(14, 165, 233, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 75% 75%, rgba(20, 184, 166, 0.1) 0%, transparent 50%);
+  }
+  
+  /* Responsive floating label styles */
+  .floating-label input:focus + label,
+  .floating-label input:not(:placeholder-shown) + label,
+  .floating-label select:focus + label,
+  .floating-label select:not([value=""]) + label,
+  .floating-label textarea:focus + label,
+  .floating-label textarea:not(:placeholder-shown) + label {
+    @apply -translate-y-7 scale-75 text-aqua-300;
+  }
+  
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-pool-100;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-pool-400 rounded-full hover:bg-pool-500;
+  }
+  
+  /* Responsive text sizes */
+  @screen sm {
+    .responsive-text-sm {
+      font-size: 0.875rem;
+    }
+  }
+  
+  @screen md {
+    .responsive-text-md {
+      font-size: 1rem;
+    }
+  }
+  
+  @screen lg {
+    .responsive-text-lg {
+      font-size: 1.125rem;
+    }
+  }
+}
