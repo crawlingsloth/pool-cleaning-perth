@@ -39,7 +39,7 @@ const Footer = () => {
           
           <div className="border-t border-gray-800 pt-6">
             <p className="text-gray-400 text-sm">
-              © {currentYear} Pool Cleaning Perth • Site Refresh by Joe's IT Solutions
+              © {currentYear} Pool Cleaning Perth • Powered by crawlingsloth.cloud
             </p>
           </div>
         </motion.div>
